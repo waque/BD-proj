@@ -18,7 +18,7 @@ PRIMARY KEY (morada)
 
 CREATE TABLE IF NOT EXISTS alugavel (
     morada VARCHAR(255) NOT NULL,
-    codigo INT NOT NULL, /* deve ser incrementar automaticamente ou nao? */
+    codigo INT NOT NULL,
 	foto VARCHAR(255) NOT NULL, /* TODO: ver tipo correcto, VARCHAR como placeholder */
 PRIMARY KEY (morada, codigo),
 FOREIGN KEY (morada) REFERENCES edificio (morada) ON DELETE CASCADE
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS paga (
     data_pagamento DATETIME  NOT NULL,
     metodo VARCHAR(255) NOT NULL,
 PRIMARY KEY (numero) ,
-FOREIGN KEY (numero) REFERENCES reserva (numero) ON DELETE CASCADE 
+FOREIGN KEY (numero) REFERENCES reserva (numero) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS estado (
@@ -102,4 +102,3 @@ FOREIGN KEY (morada, codigo, data_inicio) REFERENCES oferta (morada, codigo, dat
 FOREIGN KEY (nif) REFERENCES user (nif),
 FOREIGN KEY (numero) REFERENCES reserva (numero)
 );
-

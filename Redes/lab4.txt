@@ -1,0 +1,36 @@
+1.1 -
+
+
+Os IPs atingidos pelo router A são aqueles cujas sub-redes estão diretamente ligados ao router A.
+Os IPs dessas sub redes são 222.222.10.0/24, 222.222.20./24 e 132.168.128.0/24.
+Não consegue atingir outros IPs porque não existe nenhum caminho para as outras sub-redes.
+Neste caso a sub-rede 222.222.30.0/24
+
+----------------------------------------------------------------------------------
+1.2
+
+
+O ping envia um pacote e espera pela receção da resposta. Neste caso ele envia sempre
+mas só recebe a resposta do router que está diretamente ligado pois não foi definido
+nenhum caminho do outro router para o A, sendo assim o ping dá time out.
+
+----------------------------------------------------------------------------------
+1.3
+
+
+Para termos conectividade total temos de ter caminhos definidos de todos os
+routers para todas as redes ou seja teremos de definir como gateway para
+uma certa rede a que o router não está diretamente ligado um IP de uma rede a que esteja
+ligado, e este IP é de um router que está ligado à rede destino.
+
+----------------------------------------------------------------------------------
+
+1.4 
+
+
+Ao desconectar os routers A e C perdemos a conectividade entre o router A e a rede CB,
+entre o PC e a rede CD e entre o router C e a rede PC e perdemos tambem a rede AC. Ao executar
+o comando ping para um IP destas redes este não é alcançado. Isto acontece porque algumas
+rotas definidas anteriormente deixam de estar validas. Com o static router as rotas,
+que são definidas manualmente são estáticas e então não sãos tolerantes a este tipo de
+falha visto que não é arranjado uma alternativa para o caminho.
